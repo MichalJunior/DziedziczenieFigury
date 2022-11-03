@@ -20,7 +20,7 @@ public class DziedzczenieAPP {
             int bok1 = Integer.parseInt(boki.substring(0, 1));
             int bok2 = Integer.parseInt(boki.substring(2, 3));
             int bok3 = Integer.parseInt(boki.substring(4, 5));
-            sb.append("bok1: ").append(bok1).append(" bok2: ").append(bok2).append(" bok3: ").append(bok3);
+         //   sb.append("bok1: ").append(bok1).append(" bok2: ").append(bok2).append(" bok3: ").append(bok3);
 
             if (czyJestTrójkątem(bok1, bok2, bok3)) {
 
@@ -52,12 +52,15 @@ public class DziedzczenieAPP {
                 }
 
             } else GUI.nieUdałoSieUtworzycTrójkąta();
+
+
+          
+                System.out.println( tab[i].side1+" "+tab[i].side2+" "+tab[i].side3 +" "+tab[i].getName() + " Pole "
+                        + tab[i].obliczPole(tab[i].side1,tab[i].side2,tab[i].side3));
             i++;
-
-
-            System.out.println( tab[0].side1+" "+tab[0].side2+" "+tab[0].side3 +" "+tab[0].getName() + " Pole "
-                    + tab[0].obliczPole(tab[0].side1,tab[0].side2,tab[0].side3));
         }
+
+
     }
 
     private static boolean czyJestRównoboczny(int bok1, int bok2, int bok3) {
