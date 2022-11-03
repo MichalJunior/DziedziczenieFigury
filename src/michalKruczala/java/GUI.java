@@ -4,6 +4,6 @@ public class GUI {
     }
 
     public static void nieUdałoSieUtworzycTrójkąta() {
-        System.out.println("nie udało się utworzyć trójkąta");
+        System.out.println(">>>>Nie udało się utworzyć trójkąta<<<<");
     }
 }

@@ -10,41 +10,70 @@ public class DziedzczenieAPP {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Trojkat[] tab = new Trojkat[10];
+        int i=0;
+
+        while (true) {
+            GUI.askUserForSides();
+            String boki = scanner.nextLine();
+
+            StringBuilder sb = new StringBuilder();
+            int bok1 = Integer.parseInt(boki.substring(0, 1));
+            int bok2 = Integer.parseInt(boki.substring(2, 3));
+            int bok3 = Integer.parseInt(boki.substring(4, 5));
+            sb.append("bok1: ").append(bok1).append(" bok2: ").append(bok2).append(" bok3: ").append(bok3);
+
+            if (czyJestTrójkątem(bok1, bok2, bok3)) {
 
 
-        GUI.askUserForSides();
-        String boki = scanner.nextLine();
+                if (czyJestRównoramienny(bok1, bok2, bok3)) {
+                    if (czyJestRównoboczny(bok1, bok2, bok3)) {
+                        TrojkatRownoboczny trojkatRownoboczny = new TrojkatRownoboczny(bok1, bok2, bok3);
+                       // sb.append(" Pole ").append(trojkatRownoboczny.obliczPole(bok1, bok2, bok3)).append(" ");
+                       // sb.append(trojkatRownoboczny.getName());
 
-        StringBuilder sb = new StringBuilder();
-        int bok1 = Integer.parseInt(boki.substring(0, 1));
-        int bok2 = Integer.parseInt(boki.substring(2, 3));
-        int bok3 = Integer.parseInt(boki.substring(4, 5));
-        System.out.println("bok1: " + bok1 + " bok2: " + bok2 + " bok3: " + bok3);
+                        tab[i] = trojkatRownoboczny;
+                        System.out.println(sb);
 
-        if (bok1 + bok2 > bok3 || bok1 + bok3 > bok2 || bok2 + bok3 > bok1) {
-            sb.append("udalo sie utworzyć trójkąt ");
+                    } else {
+                        TrojkatRownoramienny trojkatRownoramienny = new TrojkatRownoramienny(bok1, bok2, bok3);
 
+                       // sb.append(" Pole ").append(trojkatRownoramienny.obliczPole(bok1, bok2, bok3)).append(" ");
+                        //sb.append(trojkatRownoramienny.getName());
+                      //  System.out.println(sb);
+                        tab[i] =trojkatRownoramienny;
+                    }
 
-            if (bok1 == bok2 && bok3 == bok1) {
-                TrojkatRownoboczny trojkatRownoboczny = new TrojkatRownoboczny(bok1, bok2, bok3);
+                } else {
+                    TrojkatRoznoboczny trojkatRoznoboczny = new TrojkatRoznoboczny(bok1, bok2, bok3);
+                   // sb.append(" Pole ").append(trojkatRoznoboczny.obliczPole(bok1, bok2, bok3)).append(" ");
+                 //   sb.append(trojkatRoznoboczny.getName());
+                  //  System.out.println(sb);
+                    tab[i] =trojkatRoznoboczny;
+                }
 
-                sb.append("Pole ").append(trojkatRownoboczny.obliczPole(bok1, bok2, bok3)).append(" ");
-                sb.append(trojkatRownoboczny.getName());
-
-                tab[0] = trojkatRownoboczny;
-                System.out.println(sb);
-
-            }
-            if (bok1 == bok2 || bok3 == bok1 || bok2 == bok3) {
-                tab[0] = new TrojkatRownoramienny(bok1, bok2, bok3);
-            } else tab[0] = new TrojkatRoznoboczny(bok1, bok2, bok3);
-
-        } else GUI.nieUdałoSieUtworzycTrójkąta();
+            } else GUI.nieUdałoSieUtworzycTrójkąta();
+            i++;
 
 
+            System.out.println( tab[0].side1+" "+tab[0].side2+" "+tab[0].side3 +" "+tab[0].getName() + " Pole "
+                    + tab[0].obliczPole(tab[0].side1,tab[0].side2,tab[0].side3));
+        }
+    }
+
+    private static boolean czyJestRównoboczny(int bok1, int bok2, int bok3) {
+        return bok1 == bok2 && bok3 == bok1;
+    }
+
+    private static boolean czyJestRównoramienny(int bok1, int bok2, int bok3) {
+        return bok1 == bok2 || bok3 == bok1 || bok2 == bok3;
+    }
+
+    private static boolean czyJestTrójkątem(int bok1, int bok2, int bok3) {
+        return (bok1 + bok2 > bok3 && bok1 - bok2 < bok3) && (bok1 + bok3 > bok2 && bok1 - bok3 < bok2) && (bok2 + bok3 > bok1 && bok2 - bok3 < bok1);
     }
 
     public void rozpoznajFigure(String boki) {
+
 
     }
 }
