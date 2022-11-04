@@ -1,4 +1,6 @@
 import cztery.Czworokat;
+import cztery.Kwadrat;
+import cztery.Prostokat;
 import model.Figura;
 import trzy.*;
 
@@ -28,24 +30,20 @@ public class DziedzczenieAPP {
 
                 if (czyJestProstokatem(bok1, bok2, bok3, bok4)) {
                     if (czyJestKwadratem(bok1, bok2, bok3, bok4)) {
-                        Figura kwadrat = new Czworokat(bok1, bok2, bok3, bok4);
+                        Figura kwadrat = new Kwadrat(bok1, bok2, bok3, bok4);
                         tab[i] = kwadrat;
                     }
-                    Figura prostokat = new Czworokat(bok1, bok2, bok3, bok4);
+                    Figura prostokat = new Prostokat(bok1, bok2, bok3, bok4);
                     tab[i] = prostokat;
                 } else {
                     Figura czworokat = new Czworokat(bok1, bok2, bok3, bok4);
                     tab[i] = czworokat;
+
                 }
+                System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " " + tab[i].getSide4() + " Pole "
+                        + tab[i].obliczPole(bok1, bok2, bok3, bok4, 0, 0) + " " + tab[i].getName());
 
-
-
-
-               // System.out.println(tab[i].side1 + " " + tab[i].side2 + " " + tab[i].side3 + " "+ tab[i] + tab[i].getName() + " Pole "
-                //        + tab[i].obliczPole(tab[i].side1, tab[i].side2, tab[i].side3));
             }
-
-
             if (tabs[i].length() == 5) {
                 int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
                 int bok2 = Integer.parseInt(tabs[i].substring(2, 3));
@@ -64,8 +62,9 @@ public class DziedzczenieAPP {
                         Figura trojkatRoznoboczny = new TrojkatRoznoboczny(bok1, bok2, bok3);
                         tab[i] = trojkatRoznoboczny;
                     }
-                    //System.out.println(tab[i].side1 + " " + tab[i].side2 + " " + tab[i].side3 + " " + tab[i].getName() + " Pole "
-                    //        + tab[i].obliczPole(tab[i].side1, tab[i].side2, tab[i].side3));
+                    System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " Pole "
+                            + tab[i].obliczPole(bok1, bok2, bok3, 0, 0, 0) + " " + tab[i].getName());
+
                 } else GUI.nieUdałoSieUtworzycTrójkąta(bok1, bok2, bok3);
             }
         }

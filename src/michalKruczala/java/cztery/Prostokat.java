@@ -1,24 +1,26 @@
 package cztery;
 
+import intefrejsy.Metodki;
 import model.Figura;
 
-public class Prostokat extends Figura {
-    int side4;
+public class Prostokat extends Czworokat implements Metodki {
+
 
     public Prostokat(int side1, int side2, int side3, int side4) {
-        super(side1, side2, side3);
-        this.side4 = side4;
+        super(side1, side2, side3, side4);
+
     }
 
     @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public double obliczPole(int side1, int side2, int side3, int side4) {
+    public double obliczPole(int side1, int side2, int side3, int side4, int side5, int side6) {
         if (side1 == side2) {
             return side1 * side3;
         } else return side1 * side2;
     }
+
+    @Override
+    public String getName() {
+        return "Prostokat";
+    }
+
 }
