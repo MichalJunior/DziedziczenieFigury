@@ -1,13 +1,12 @@
 package trzy;
 
-public class TrojkatRownoboczny extends Trojkat {
+import model.Figura;
 
-
+public class TrojkatRownoboczny extends Figura {
 
 
     public TrojkatRownoboczny(int side1, int side2, int side3) {
         super(side1, side2, side3);
-
     }
 
     @Override
@@ -15,8 +14,6 @@ public class TrojkatRownoboczny extends Trojkat {
         return "Trójkąt Równoboczny";
     }
 
-    @Override
-    public double obliczPole(int side1, int side2, int side3) {
-        return super.obliczPole(side1, side2, side3);
+
     }
 }
