@@ -3,7 +3,7 @@ package model;
 
 ;
 
-public abstract class Figura {
+public class Figura {
     int side1;
     int side2;
     int side3;
@@ -18,10 +18,16 @@ public abstract class Figura {
         this.side3 = side3;
 
     }
-    public double obliczPole(int side1, int side2, int side3, int side4, int side5, int side6){
+
+    public double obliczPole(int side1, int side2, int side3, int side4, int side5, int side6) {
         return 0;
     }
-    public String getName(){
+
+    public int obliczObwód(int side1, int side2, int side3, int side4, int side5, int side6) {
+        return 0;
+    }
+
+    public String getName() {
         return "o";
     }
 

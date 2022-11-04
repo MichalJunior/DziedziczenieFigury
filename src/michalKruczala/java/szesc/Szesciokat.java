@@ -16,8 +16,13 @@ public class Szesciokat extends Pieciokat {
     }
 
     @Override
+    public int obliczObwód(int side1, int side2, int side3, int side4, int side5, int side6) {
+        return side1 + side2 + side3 + side4 + side5 + side6;
+    }
+
+    @Override
     public String getName() {
-        return"Jakis szesciokat";
+        return "Jakis szesciokat";
     }
 
     @Override

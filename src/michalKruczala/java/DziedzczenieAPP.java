@@ -42,7 +42,7 @@ public class DziedzczenieAPP {
                     tab[i] = jakisSzesciakat;
                 }
                 System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " " + tab[i].getSide4() + " " + tab[i].getSide5() + " " + tab[i].getSide6()
-                        + " Pole " + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, bok6) + " " + tab[i].getName());
+                        + " Pole " + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, bok6) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, bok4, bok5, bok6));
             }
             if (tabs[i].length() == 9) {
                 int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
@@ -58,7 +58,7 @@ public class DziedzczenieAPP {
                     tab[i] = jakisPieciokat;
                 }
                 System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " " + tab[i].getSide4() + " " + tab[i].getSide5() + " Pole "
-                        + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, 0) + " " + tab[i].getName());
+                        + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, 0) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, bok4, bok5, 0));
             }
             if (tabs[i].length() == 7) {
                 int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
@@ -77,7 +77,7 @@ public class DziedzczenieAPP {
 
                 }
                 System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " " + tab[i].getSide4() + " Pole "
-                        + tab[i].obliczPole(bok1, bok2, bok3, bok4, 0, 0) + " " + tab[i].getName());
+                        + tab[i].obliczPole(bok1, bok2, bok3, bok4, 0, 0) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, bok4, 0, 0));
 
             }
             if (tabs[i].length() == 5) {
@@ -99,7 +99,7 @@ public class DziedzczenieAPP {
                         tab[i] = trojkatRoznoboczny;
                     }
                     System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " Pole "
-                            + tab[i].obliczPole(bok1, bok2, bok3, 0, 0, 0) + " " + tab[i].getName());
+                            + tab[i].obliczPole(bok1, bok2, bok3, 0, 0, 0) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, 0, 0, 0));
 
                 } else GUI.nieUdałoSieUtworzycTrójkąta(bok1, bok2, bok3);
             }

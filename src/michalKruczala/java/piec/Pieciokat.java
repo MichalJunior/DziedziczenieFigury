@@ -4,7 +4,8 @@ import cztery.Czworokat;
 
 public class Pieciokat extends Czworokat {
     int side5;
-    public Pieciokat(int side1, int side2, int side3, int side4,int side5) {
+
+    public Pieciokat(int side1, int side2, int side3, int side4, int side5) {
         super(side1, side2, side3, side4);
         this.side5 = side5;
     }
@@ -15,8 +16,13 @@ public class Pieciokat extends Czworokat {
     }
 
     @Override
+    public int obliczObwód(int side1, int side2, int side3, int side4, int side5, int side6) {
+        return side1 + side2 + side3 + side4 + side5;
+    }
+
+    @Override
     public String getName() {
-        return"jakis pieciokot";
+        return "jakis pieciokot";
     }
 
     @Override

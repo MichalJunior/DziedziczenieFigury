@@ -1,13 +1,11 @@
 package cztery;
 
 
-
 public class Kwadrat extends Czworokat {
 
 
-
     public Kwadrat(int side1, int side2, int side3, int side4) {
-        super(side1, side2, side3,side4);
+        super(side1, side2, side3, side4);
 
 
     }
@@ -25,6 +23,10 @@ public class Kwadrat extends Czworokat {
         return "kwadrat";
     }
 
+    @Override
+    public int obliczObwód(int side1, int side2, int side3, int side4, int side5, int side6) {
+        return side1 + side2 + side3 + side4;
+    }
 }
 
 
