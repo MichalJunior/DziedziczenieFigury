@@ -1,11 +1,11 @@
 package cztery;
 
-import intefrejsy.Metodki;
+;
 import model.Figura;
 
 import javax.xml.crypto.dsig.Manifest;
 
-public class Czworokat extends Figura implements Metodki {
+public class Czworokat extends Figura {
     int side4;
 
     public Czworokat(int side1, int side2, int side3, int side4) {

@@ -1,6 +1,5 @@
 package trzy;
 
-import intefrejsy.Metodki;
 import model.Figura;
 
 public class TrojkatRoznoboczny extends Figura {

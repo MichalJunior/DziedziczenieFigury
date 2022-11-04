@@ -1,6 +1,5 @@
 package trzy;
 
-import intefrejsy.Metodki;
 import model.Figura;
 
 public class TrojkatRownoramienny extends Figura  {

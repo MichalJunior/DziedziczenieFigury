@@ -4,6 +4,8 @@ import cztery.Prostokat;
 import model.Figura;
 import piec.Pieciokat;
 import piec.PieciokatForemny;
+import szesc.Szesciokat;
+import szesc.SzesciokatForemny;
 import trzy.*;
 
 import java.util.Scanner;
@@ -23,6 +25,23 @@ public class DziedzczenieAPP {
         }
 
         for (int i = 0; i < tabs.length; i++) {
+            if (tabs[i].length() == 11) {
+                int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
+                int bok2 = Integer.parseInt(tabs[i].substring(2, 3));
+                int bok3 = Integer.parseInt(tabs[i].substring(4, 5));
+                int bok4 = Integer.parseInt(tabs[i].substring(6, 7));
+                int bok5 = Integer.parseInt(tabs[i].substring(8, 9));
+                int bok6 = Integer.parseInt(tabs[i].substring(10, 11));
+                if (czySzesciakatJestForemny(bok1, bok2, bok3, bok4, bok5, bok6)) {
+                    Figura szesciakatForemny = new SzesciokatForemny(bok1, bok2, bok3, bok4, bok5, bok6);
+                    tab[i] = szesciakatForemny;
+                } else {
+                    Figura jakisSzesciakat = new Szesciokat(bok1, bok2, bok3, bok4, bok5, bok6);
+                    tab[i] = jakisSzesciakat;
+                }
+                System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " " + tab[i].getSide4() + " " + tab[i].getSide5() + " " + tab[i].getSide6()
+                        + " Pole " + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, bok6) + " " + tab[i].getName());
+            }
             if (tabs[i].length() == 9) {
                 int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
                 int bok2 = Integer.parseInt(tabs[i].substring(2, 3));
@@ -83,6 +102,10 @@ public class DziedzczenieAPP {
                 } else GUI.nieUdałoSieUtworzycTrójkąta(bok1, bok2, bok3);
             }
         }
+    }
+
+    private static boolean czySzesciakatJestForemny(int bok1, int bok2, int bok3, int bok4, int bok5, int bok6) {
+        return bok1 == bok2 && bok2 == bok3 && bok4 == bok6 && bok6 == bok1 && bok2 == bok5;
     }
 
     private static boolean czyPieciakatJestForemny(int bok1, int bok2, int bok3, int bok4, int bok5) {

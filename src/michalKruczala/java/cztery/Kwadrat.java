@@ -1,8 +1,6 @@
 package cztery;
 
 
-import intefrejsy.Metodki;
-import model.Figura;
 
 public class Kwadrat extends Czworokat {
 

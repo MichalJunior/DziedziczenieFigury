@@ -1,9 +1,7 @@
 package cztery;
 
-import intefrejsy.Metodki;
-import model.Figura;
 
-public class Prostokat extends Czworokat implements Metodki {
+public class Prostokat extends Czworokat {
 
 
     public Prostokat(int side1, int side2, int side3, int side4) {

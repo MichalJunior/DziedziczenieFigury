@@ -1,7 +1,7 @@
 package model;
 
 
-import intefrejsy.Metodki;
+;
 
 public abstract class Figura {
     int side1;
