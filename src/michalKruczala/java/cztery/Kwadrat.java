@@ -4,7 +4,7 @@ package cztery;
 import intefrejsy.Metodki;
 import model.Figura;
 
-public class Kwadrat extends Czworokat implements Metodki {
+public class Kwadrat extends Czworokat {
 
 
 

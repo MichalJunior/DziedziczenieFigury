@@ -16,6 +16,7 @@ public class Czworokat extends Figura implements Metodki {
     @Override
     public double obliczPole(int side1, int side2, int side3, int side4, int side5, int side6) {
         return 0;
+
     }
 
     @Override
@@ -38,6 +39,9 @@ public class Czworokat extends Figura implements Metodki {
         return super.getSide3();
     }
 
-
+    @Override
+    public int getSide4() {
+        return side4;
+    }
 }
 

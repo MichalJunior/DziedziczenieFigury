@@ -11,8 +11,7 @@ public class DziedzczenieAPP {
         Scanner scanner = new Scanner(System.in);
         Figura[] tab = new Figura[5];
 
-
-        String[] tabs = new String[5];
+        String[] tabs = new String[3];
 
 
         for (int j = 0; j < tabs.length; j++) {
@@ -27,12 +26,11 @@ public class DziedzczenieAPP {
                 int bok2 = Integer.parseInt(tabs[i].substring(2, 3));
                 int bok3 = Integer.parseInt(tabs[i].substring(4, 5));
                 int bok4 = Integer.parseInt(tabs[i].substring(6, 7));
-
-                if (czyJestProstokatem(bok1, bok2, bok3, bok4)) {
-                    if (czyJestKwadratem(bok1, bok2, bok3, bok4)) {
-                        Figura kwadrat = new Kwadrat(bok1, bok2, bok3, bok4);
-                        tab[i] = kwadrat;
-                    }
+                if (czyJestKwadratem(bok1, bok2, bok3, bok4)) {
+                    Figura kwadrat = new Kwadrat(bok1, bok2, bok3, bok4);
+                    tab[i] = kwadrat;
+                }
+                else if (czyJestProstokatem(bok1, bok2, bok3, bok4)) {
                     Figura prostokat = new Prostokat(bok1, bok2, bok3, bok4);
                     tab[i] = prostokat;
                 } else {
