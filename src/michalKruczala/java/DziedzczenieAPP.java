@@ -12,10 +12,11 @@ import java.util.Scanner;
 
 public class DziedzczenieAPP {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Figura[] tab = new Figura[5];
 
-        String[] tabs = new String[3];
+        Scanner scanner = new Scanner(System.in);
+        int ileFigur = zapytajIleFigur();
+        Figura[] tab = new Figura[ileFigur];
+        String[] tabs = new String[ileFigur];
 
 
         for (int j = 0; j < tabs.length; j++) {
@@ -25,6 +26,7 @@ public class DziedzczenieAPP {
         }
 
         for (int i = 0; i < tabs.length; i++) {
+
             if (tabs[i].length() == 11) {
                 int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
                 int bok2 = Integer.parseInt(tabs[i].substring(2, 3));
@@ -104,6 +106,12 @@ public class DziedzczenieAPP {
         }
     }
 
+    private static int zapytajIleFigur() {
+        Scanner scanner2 = new Scanner(System.in);
+        System.out.print("Ile figur chcialbys wprowadzic?:");
+        return scanner2.nextInt();
+    }
+
     private static boolean czySzesciakatJestForemny(int bok1, int bok2, int bok3, int bok4, int bok5, int bok6) {
         return bok1 == bok2 && bok2 == bok3 && bok4 == bok6 && bok6 == bok1 && bok2 == bok5;
     }
@@ -131,12 +139,6 @@ public class DziedzczenieAPP {
     private static boolean czyJestTrójkątem(int bok1, int bok2, int bok3) {
         return (bok1 + bok2 > bok3 && bok1 - bok2 < bok3) && (bok1 + bok3 > bok2 && bok1 - bok3 < bok2) && (bok2 + bok3 > bok1 && bok2 - bok3 < bok1);
     }
-
-    public static void rozpoznajFigure(String wymiary) {
-
-
-    }
-
 
 }
 
