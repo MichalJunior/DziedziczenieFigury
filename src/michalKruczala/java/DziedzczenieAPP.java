@@ -20,11 +20,10 @@ public class DziedzczenieAPP {
 
 
         for (int j = 0; j < tabs.length; j++) {
-            GUI.askUserForSides();
+            GUI.zapytajUżytkownikaOWymiary();
             String wymiar = scanner.nextLine();
             tabs[j] = wymiar;
         }
-
         for (int i = 0; i < tabs.length; i++) {
 
             if (tabs[i].length() == 11) {
