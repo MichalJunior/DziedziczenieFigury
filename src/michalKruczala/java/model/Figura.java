@@ -22,7 +22,7 @@ public abstract class Figura {
         return 0;
     }
     public String getName(){
-        return null;
+        return "o";
     }
 
     public int getSide1() {

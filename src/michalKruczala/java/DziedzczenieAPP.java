@@ -2,6 +2,8 @@ import cztery.Czworokat;
 import cztery.Kwadrat;
 import cztery.Prostokat;
 import model.Figura;
+import piec.Pieciokat;
+import piec.PieciokatForemny;
 import trzy.*;
 
 import java.util.Scanner;
@@ -21,6 +23,22 @@ public class DziedzczenieAPP {
         }
 
         for (int i = 0; i < tabs.length; i++) {
+            if (tabs[i].length() == 9) {
+                int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
+                int bok2 = Integer.parseInt(tabs[i].substring(2, 3));
+                int bok3 = Integer.parseInt(tabs[i].substring(4, 5));
+                int bok4 = Integer.parseInt(tabs[i].substring(6, 7));
+                int bok5 = Integer.parseInt(tabs[i].substring(8, 9));
+                if (czyPieciakatJestForemny(bok1, bok2, bok3, bok4, bok5)) {
+                    Figura pieciokotForemny = new PieciokatForemny(bok1, bok2, bok3, bok4, bok5);
+                    tab[i] = pieciokotForemny;
+                } else {
+                    Figura jakisPieciokat = new Pieciokat(bok1, bok2, bok3, bok4, bok5);
+                    tab[i] = jakisPieciokat;
+                }
+                System.out.println(tab[i].getSide1() + " " + tab[i].getSide2() + " " + tab[i].getSide3() + " " + tab[i].getSide4() + " " + tab[i].getSide5() + " Pole "
+                        + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, 0) + " " + tab[i].getName());
+            }
             if (tabs[i].length() == 7) {
                 int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
                 int bok2 = Integer.parseInt(tabs[i].substring(2, 3));
@@ -29,8 +47,7 @@ public class DziedzczenieAPP {
                 if (czyJestKwadratem(bok1, bok2, bok3, bok4)) {
                     Figura kwadrat = new Kwadrat(bok1, bok2, bok3, bok4);
                     tab[i] = kwadrat;
-                }
-                else if (czyJestProstokatem(bok1, bok2, bok3, bok4)) {
+                } else if (czyJestProstokatem(bok1, bok2, bok3, bok4)) {
                     Figura prostokat = new Prostokat(bok1, bok2, bok3, bok4);
                     tab[i] = prostokat;
                 } else {
@@ -66,6 +83,10 @@ public class DziedzczenieAPP {
                 } else GUI.nieUdałoSieUtworzycTrójkąta(bok1, bok2, bok3);
             }
         }
+    }
+
+    private static boolean czyPieciakatJestForemny(int bok1, int bok2, int bok3, int bok4, int bok5) {
+        return bok1 == bok2 && bok3 == bok4 && bok1 == bok3 && bok5 == 1;
     }
 
     private static boolean czyJestProstokatem(int bok1, int bok2, int bok3, int bok4) {
