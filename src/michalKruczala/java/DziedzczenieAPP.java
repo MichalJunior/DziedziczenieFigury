@@ -18,11 +18,10 @@ public class DziedzczenieAPP {
         Figura[] tab = new Figura[ileFigur];
         String[] tabs = new String[ileFigur];
 
-
         for (int j = 0; j < tabs.length; j++) {
             GUI.zapytajUżytkownikaOWymiary();
-            String wymiar = scanner.nextLine();
-            tabs[j] = wymiar;
+            String wymiary = scanner.nextLine();
+            tabs[j] = wymiary;
         }
         for (int i = 0; i < tabs.length; i++) {
 
@@ -34,11 +33,9 @@ public class DziedzczenieAPP {
                 int bok5 = Integer.parseInt(tabs[i].substring(8, 9));
                 int bok6 = Integer.parseInt(tabs[i].substring(10, 11));
                 if (czySzesciakatJestForemny(bok1, bok2, bok3, bok4, bok5, bok6)) {
-                    Figura szesciakatForemny = new SzesciokatForemny(bok1, bok2, bok3, bok4, bok5, bok6);
-                    tab[i] = szesciakatForemny;
+                    tab[i] = new SzesciokatForemny(bok1, bok2, bok3, bok4, bok5, bok6);
                 } else {
-                    Figura jakisSzesciakat = new Szesciokat(bok1, bok2, bok3, bok4, bok5, bok6);
-                    tab[i] = jakisSzesciakat;
+                    tab[i] = new Szesciokat(bok1, bok2, bok3, bok4, bok5, bok6);
                 }
                 System.out.println("Pole " + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, bok6) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, bok4, bok5, bok6));
             }
@@ -49,11 +46,11 @@ public class DziedzczenieAPP {
                 int bok4 = Integer.parseInt(tabs[i].substring(6, 7));
                 int bok5 = Integer.parseInt(tabs[i].substring(8, 9));
                 if (czyPieciakatJestForemny(bok1, bok2, bok3, bok4, bok5)) {
-                    Figura pieciokotForemny = new PieciokatForemny(bok1, bok2, bok3, bok4, bok5);
-                    tab[i] = pieciokotForemny;
+
+                    tab[i] = new PieciokatForemny(bok1, bok2, bok3, bok4, bok5);
                 } else {
-                    Figura jakisPieciokat = new Pieciokat(bok1, bok2, bok3, bok4, bok5);
-                    tab[i] = jakisPieciokat;
+
+                    tab[i] = new Pieciokat(bok1, bok2, bok3, bok4, bok5);
                 }
                 System.out.println("Pole " + tab[i].obliczPole(bok1, bok2, bok3, bok4, bok5, 0) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, bok4, bok5, 0));
             }
@@ -63,18 +60,14 @@ public class DziedzczenieAPP {
                 int bok3 = Integer.parseInt(tabs[i].substring(4, 5));
                 int bok4 = Integer.parseInt(tabs[i].substring(6, 7));
                 if (czyJestKwadratem(bok1, bok2, bok3, bok4)) {
-                    Figura kwadrat = new Kwadrat(bok1, bok2, bok3, bok4);
-                    tab[i] = kwadrat;
+                    tab[i] = new Kwadrat(bok1, bok2, bok3, bok4);
                 } else if (czyJestProstokatem(bok1, bok2, bok3, bok4)) {
-                    Figura prostokat = new Prostokat(bok1, bok2, bok3, bok4);
-                    tab[i] = prostokat;
-                } else {
-                    Figura czworokat = new Czworokat(bok1, bok2, bok3, bok4);
-                    tab[i] = czworokat;
 
+                    tab[i] = new Prostokat(bok1, bok2, bok3, bok4);
+                } else {
+                    tab[i] = new Czworokat(bok1, bok2, bok3, bok4);
                 }
                 System.out.println("Pole " + tab[i].obliczPole(bok1, bok2, bok3, bok4, 0, 0) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, bok4, 0, 0));
-
             }
             if (tabs[i].length() == 5) {
                 int bok1 = Integer.parseInt(tabs[i].substring(0, 1));
@@ -84,18 +77,14 @@ public class DziedzczenieAPP {
                 if (czyJestTrójkątem(bok1, bok2, bok3)) {
                     if (czyJestRównoramienny(bok1, bok2, bok3)) {
                         if (czyJestRównoboczny(bok1, bok2, bok3)) {
-                            Figura trojkatRownoboczny = new TrojkatRownoboczny(bok1, bok2, bok3);
-                            tab[i] = trojkatRownoboczny;
+                            tab[i] = new TrojkatRownoboczny(bok1, bok2, bok3);
                         } else {
-                            Figura trojkatRownoramienny = new TrojkatRownoramienny(bok1, bok2, bok3);
-                            tab[i] = trojkatRownoramienny;
+                            tab[i] = new TrojkatRownoramienny(bok1, bok2, bok3);
                         }
                     } else {
-                        Figura trojkatRoznoboczny = new TrojkatRoznoboczny(bok1, bok2, bok3);
-                        tab[i] = trojkatRoznoboczny;
+                        tab[i] = new TrojkatRoznoboczny(bok1, bok2, bok3);
                     }
                     System.out.println("Pole " + tab[i].obliczPole(bok1, bok2, bok3, 0, 0, 0) + " " + tab[i].getName() + " Obwód " + tab[i].obliczObwód(bok1, bok2, bok3, 0, 0, 0));
-
                 } else GUI.nieUdałoSieUtworzycTrójkąta(bok1, bok2, bok3);
             }
         }
